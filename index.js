@@ -14,12 +14,23 @@ const line_config = {
 // Webサーバー設定
 server.listen(process.env.PORT || 3000);
 
+
+// -----------------------------------------------------------------------------
+// ルーター設定
+// server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
+//     res.sendStatus(200);
+//     console.log(req.body);
+// });
+
 // APIコールのためのクライアントインスタンスを作成
 const bot = new line.Client(line_config);
 
 // -----------------------------------------------------------------------------
 // ルーター設定
 server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
+
+    console.log('debug start post event');
+
     // 先行してLINE側にステータスコード200でレスポンスする。
     res.sendStatus(200);
 
@@ -28,17 +39,36 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 
     // イベントオブジェクトを順次処理。
     req.body.events.forEach((event) => {
+
+        console.log('debug event.type = ' + event.type);
+        console.log('debug event.message.type = ' + event.message.type);
+
         // この処理の対象をイベントタイプがメッセージで、かつ、テキストタイプだった場合に限定。
         if (event.type == "message" && event.message.type == "text"){
+
+            console.log('debug event.message.text = ' + event.message.text);
+
             // ユーザーからのテキストメッセージが「こんにちは」だった場合のみ反応。
+            if (event.message.text == "こんにちは"){
+                // replyMessage()で返信し、そのプロミスをevents_processedに追加。
+                events_processed.push(bot.replyMessage(event.replyToken, {
+                    type: "text",
+                    text: "これはこれは"
+                }));
+                console.log('debug bot response ok');
+            }
+
             if (event.message.text == "hello"){
                 // replyMessage()で返信し、そのプロミスをevents_processedに追加。
                 events_processed.push(bot.replyMessage(event.replyToken, {
                     type: "text",
-                    text: "ohoho"
+                    text: "hey"
                 }));
+                console.log('debug bot response ok');
             }
         }
+
+        console.log('debug end post event');
     });
 
     // すべてのイベント処理が終了したら何個のイベントが処理されたか出力。
