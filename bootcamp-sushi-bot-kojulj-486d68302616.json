@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bootcamp-sushi-bot-kojulj",
+  "private_key_id": "486d6830261607b4e166ee3ee18b9a1546980e66",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4/+mzpRQvVdlr\n8GZtg1hs5DqmUkhCXsgHSV2DUMXeTRKT25QQpNzNeX+EP9JpjNcxHRQ/SLojCw3U\nBBi77FFwSayV5GpbkiujTSyFHqkYsNWqE8eTW+Xc+CsZeQhx7rG4UlCorbAEWZse\nJNJzZkccAOzVm/i3LcRPyEJ61ldvDTMr3kFb2ckDW/9gfrqpGtC/OskTDuFfspXm\niLEyYaivY9kZnXbYc0o4vBUs709siu5cxPhBQB1sStpo6NsJxac+qMLtRw6nBSIJ\nWkhlmYDDmoByra6u7LN5Nqo5GjMJIrGrsOL65czEo0+sxJryj1TSFP85sul5EvtD\n7LPoPHYJAgMBAAECggEAJixQOcxfXOEXCwnA6OoITffODlG+LUvHdJFz5Uu+eH9o\nzO+rHsAV+6QNZumQbk0sfirk6aYFGoQGZ3As9mHt8ACTxx4pwBlqPbkH7bQE6l5a\nyExqiwKUbMMciZYK4w+Axmrdz+B/CHbA5jhs4HkDRUj/lZgoewvLjTbiWNxvkC9M\nPM8NsXPy/NNb9Kso1jJq7yOUEHtcIuypzTcPTk2xCLX2wHxrUarAlAIvR/n7ysJd\nfHuEf/VC8YsiMzMIluKsL3QqPCDeug4NfslQIr1DHB2dnZ2pih5mWaJl48ywbvxL\nxrwyqYDSLG7aej84gi43r9ZsTzeYIpWvGPCDLbem/QKBgQDgRfjMK/nN30K0nEmH\nRGzi3ehZRyf7c5upwC+YFF9LzLSfRQIqkQHYRT9Ys8BRSzytP/R0gp+1hVijOP1d\n/s83/WdrCz5fK1Xy0PUqXAQVyy22JLnr4AZe7xcWYvJYkz+6FmXHAzHdZVWGAEs7\nY2jSJ6e5YMeAaBGlYYv4cuDCTwKBgQDTK6aFx5eoSRoNrS+Wc3DH0aM/gMu4iji4\nDgZSvEUgBACoNPrJxOVHCiu1EYOUWaP3y/r1JkbYtsQa7679adt51bQIC+z0aUmv\nvnJtVlI8UWeNMRi19Vlh2OE/Zt64OJM8SDoaGV8X/iakCZ5xuZ4A6eFo86Hz3O4l\nULHKlGhkJwKBgF0v1cwILbjEHrRrCAZDgTbW27dU4KETjUeASoZXWK1nNlnDU74a\nGHkjdMnHjo54w5J9M3bB29iRup2/jU9kE/gAu9r3hggHOqQ0/NmH+E6R6MF5CyOe\nJyeFEsPDg00Yie8pZUrG4g5LD7kpIBliGejQf1mAhASvuT1NhdpK6WbzAoGBAI1u\nHcBZtiwCkc15IXcdZ/qcYD6mz0qQYH58/iUpbQ6NP7dojFLYaUrT+AP0b/DKvLO4\nzSKleSup9NupjcSxwknuI/6Dpjbn0W9AGTk7aCZ3yufYaxlq8mtDK1EgX6h4U7w7\nD5btSTAzisOwoYq/a6BnBA4bpmtCm8koK3tnPCdfAoGAW4IH9oQ8yjylyze5d+u0\n/8aCcHVOXrsoyswyH4XKN7NUPD0sSF2g5QC+RgFbfxVjtdr7oR8DlGLyGqtrJ47p\n96+0I2dlh+WmGDDHGozpSq1gDyovRA5dZbDWA+IH94COEAye0gwiXH3vQrgCC0c5\nQFeCpLZiz9N1xIOojgZJArc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-frcemr@bootcamp-sushi-bot-kojulj.iam.gserviceaccount.com",
+  "client_id": "105235508244235603161",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-frcemr%40bootcamp-sushi-bot-kojulj.iam.gserviceaccount.com"
+}
