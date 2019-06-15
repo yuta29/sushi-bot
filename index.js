@@ -1,42 +1,42 @@
 // -----------------------------------------------------------------------------
-// ƒ‚ƒWƒ…[ƒ‹‚ÌƒCƒ“ƒ|[ƒg
+// ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ã‚¤ãƒ³ãƒãƒ¼ãƒˆ
 const server = require("express")();
-const line = require("@line/bot-sdk"); // Messaging API‚ÌSDK‚ðƒCƒ“ƒ|[ƒg
+const line = require("@line/bot-sdk"); // Messaging APIã®SDKã‚’ã‚¤ãƒ³ãƒãƒ¼ãƒˆ
 
 // -----------------------------------------------------------------------------
-// ƒpƒ‰ƒ[ƒ^Ý’è
+// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
 const line_config = {
-    channelAccessToken: process.env.LINE_ACCESS_TOKEN, // ŠÂ‹«•Ï”‚©‚çƒAƒNƒZƒXƒg[ƒNƒ“‚ðƒZƒbƒg‚µ‚Ä‚¢‚Ü‚·
-    channelSecret: process.env.LINE_CHANNEL_SECRET // ŠÂ‹«•Ï”‚©‚çChannel Secret‚ðƒZƒbƒg‚µ‚Ä‚¢‚Ü‚·
+    channelAccessToken: process.env.LINE_ACCESS_TOKEN, // ç’°å¢ƒå¤‰æ•°ã‹ã‚‰ã‚¢ã‚¯ã‚»ã‚¹ãƒˆãƒ¼ã‚¯ãƒ³ã‚’ã‚»ãƒƒãƒˆã—ã¦ã„ã¾ã™
+    channelSecret: process.env.LINE_CHANNEL_SECRET // ç’°å¢ƒå¤‰æ•°ã‹ã‚‰Channel Secretã‚’ã‚»ãƒƒãƒˆã—ã¦ã„ã¾ã™
 };
 
 // -----------------------------------------------------------------------------
-// WebƒT[ƒo[Ý’è
+// Webã‚µãƒ¼ãƒãƒ¼è¨­å®š
 server.listen(process.env.PORT || 3000);
 
 
 // -----------------------------------------------------------------------------
-// ƒ‹[ƒ^[Ý’è
+// ãƒ«ãƒ¼ã‚¿ãƒ¼è¨­å®š
 server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
-// APIƒR[ƒ‹‚Ì‚½‚ß‚ÌƒNƒ‰ƒCƒAƒ“ƒgƒCƒ“ƒXƒ^ƒ“ƒX‚ðì¬
+// APIã‚³ãƒ¼ãƒ«ã®ãŸã‚ã®ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆ
 const bot = new line.Client(line_config);
 
 // -----------------------------------------------------------------------------
-// ƒ‹[ƒ^[Ý’è
+// ãƒ«ãƒ¼ã‚¿ãƒ¼è¨­å®š
 server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
-    // æs‚µ‚ÄLINE‘¤‚ÉƒXƒe[ƒ^ƒXƒR[ƒh200‚ÅƒŒƒXƒ|ƒ“ƒX‚·‚éB
+    // å…ˆè¡Œã—ã¦LINEå´ã«ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚³ãƒ¼ãƒ‰200ã§ãƒ¬ã‚¹ãƒãƒ³ã‚¹ã™ã‚‹ã€‚
     res.sendStatus(200);
 
-    // ‚·‚×‚Ä‚ÌƒCƒxƒ“ƒgˆ—‚Ìƒvƒƒ~ƒX‚ðŠi”[‚·‚é”z—ñB
+    // ã™ã¹ã¦ã®ã‚¤ãƒ™ãƒ³ãƒˆå‡¦ç†ã®ãƒ—ãƒ­ãƒŸã‚¹ã‚’æ ¼ç´ã™ã‚‹é…åˆ—ã€‚
     let events_processed = [];
 
-    // ƒCƒxƒ“ƒgƒIƒuƒWƒFƒNƒg‚ð‡ŽŸˆ—B
+    // ã‚¤ãƒ™ãƒ³ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’é †æ¬¡å‡¦ç†ã€‚
     req.body.events.forEach((event) => {
-        // ‚±‚Ìˆ—‚Ì‘ÎÛ‚ðƒCƒxƒ“ƒgƒ^ƒCƒv‚ªƒƒbƒZ[ƒW‚ÅA‚©‚ÂAƒeƒLƒXƒgƒ^ƒCƒv‚¾‚Á‚½ê‡‚ÉŒÀ’èB
+        // ã“ã®å‡¦ç†ã®å¯¾è±¡ã‚’ã‚¤ãƒ™ãƒ³ãƒˆã‚¿ã‚¤ãƒ—ãŒãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã§ã€ã‹ã¤ã€ãƒ†ã‚­ã‚¹ãƒˆã‚¿ã‚¤ãƒ—ã ã£ãŸå ´åˆã«é™å®šã€‚
         if (event.type == "message" && event.message.type == "text"){
-            // ƒ†[ƒU[‚©‚ç‚ÌƒeƒLƒXƒgƒƒbƒZ[ƒW‚ªu‚±‚ñ‚É‚¿‚Ív‚¾‚Á‚½ê‡‚Ì‚Ý”½‰žB
+            // ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‹ã‚‰ã®ãƒ†ã‚­ã‚¹ãƒˆãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒã€Œã“ã‚“ã«ã¡ã¯ã€ã ã£ãŸå ´åˆã®ã¿åå¿œã€‚
             if (event.message.text == "hello"){
-                // replyMessage()‚Å•ÔM‚µA‚»‚Ìƒvƒƒ~ƒX‚ðevents_processed‚É’Ç‰ÁB
+                // replyMessage()ã§è¿”ä¿¡ã—ã€ãã®ãƒ—ãƒ­ãƒŸã‚¹ã‚’events_processedã«è¿½åŠ ã€‚
                 events_processed.push(bot.replyMessage(event.replyToken, {
                     type: "text",
                     text: "ohoho"
@@ -45,7 +45,7 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
         }
     });
 
-    // ‚·‚×‚Ä‚ÌƒCƒxƒ“ƒgˆ—‚ªI—¹‚µ‚½‚ç‰½ŒÂ‚ÌƒCƒxƒ“ƒg‚ªˆ—‚³‚ê‚½‚©o—ÍB
+    // ã™ã¹ã¦ã®ã‚¤ãƒ™ãƒ³ãƒˆå‡¦ç†ãŒçµ‚äº†ã—ãŸã‚‰ä½•å€‹ã®ã‚¤ãƒ™ãƒ³ãƒˆãŒå‡¦ç†ã•ã‚ŒãŸã‹å‡ºåŠ›ã€‚
     Promise.all(events_processed).then(
         (response) => {
             console.log(`${response.length} event(s) processed.`);
