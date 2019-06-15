@@ -35,10 +35,11 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
 
     // すべてのイベント処理のプロミスを格納する配列。
     let events_processed = [];
-
+    console.log(`001`);
     // イベントオブジェクトを順次処理。
     req.body.events.forEach((event) => {
         // この処理の対象をイベントタイプがメッセージで、かつ、テキストタイプだった場合に限定。
+        console.log(`002`);
         if (event.type == "message" && event.message.type == "text"){
             events_processed.push(
                 session_client.detectIntent({
@@ -52,6 +53,7 @@ server.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
                 }).then((responses) => {
                     if (responses[0].queryResult && responses[0].queryResult.action == "handle-delivery-order"){
                         let message_text
+                        console.log(`003`);
                         if (responses[0].queryResult.parameters.fields.menu.stringValue){
                             message_text = `毎度！${responses[0].queryResult.parameters.fields.menu.stringValue}ね。どちらにお届けしましょ？`;
                         } else {
