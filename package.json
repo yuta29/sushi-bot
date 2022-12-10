@@ -12,6 +12,6 @@
   "dependencies": {
     "@line/bot-sdk": "^6.7.1",
     "dialogflow": "^0.10.1",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
